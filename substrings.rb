@@ -7,7 +7,7 @@ def substrings(word, dictionary)
   matches = {}
   word.downcase!
   dictionary.each do |search|
-    next unless i = word.index(search)
+    next unless (i = word.index(search))
     matches[search] = 0
     while ! i.nil?
       matches[search] += 1
