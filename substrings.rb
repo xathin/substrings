@@ -8,13 +8,14 @@ def substrings(word, dictionary)
   word.downcase!
   dictionary.each do |search|
     next unless (i = word.index(search))
+
     matches[search] = 0
-    while ! i.nil?
+    unless i.nil?
       matches[search] += 1
       i = word.index(search, i + 1)
     end
   end
-  return matches
+  matches
 end
 
 # dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
